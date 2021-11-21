@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from . import views
-from .views import TaskList , TaskDetail , TaskCreate, TaskUpdate , TaskDelete
+from .views import TaskList, TaskDetail , TaskCreate, TaskUpdate , TaskDelete
 
 urlpatterns = [
     path('', views.landing,name='landing'),
@@ -34,6 +34,10 @@ urlpatterns = [
     path('usertype_in/', views.usertype_in,name='usertype_in'),
     path('financeinfo/', views.financeinfo,name='financeinfo'),
     path('data/', views.data,name='data'),
+    path('drugdrug/', views.drugdrug,name='drugdrug'),
+    path('drugdrugresult/', views.drugdrugresult,name='drugdrugresult'),
+    path('carepartner/', views.carepartner,name='carepartner'),
+    path('food-allergy/', views.foodallergy,name='food-allergy'),
    
 ]
 

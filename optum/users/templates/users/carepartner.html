@@ -1,0 +1,91 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Info Game</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <style>
+body {
+    margin-left: 5px;
+    overflow: hidden;
+    background: linear-gradient(to bottom,#04242F, #00455D 50%, #2aa887 100%);
+}
+.col-md-2{
+    background: linear-gradient(to bottom,#04242F, #00455D 50%, #2aa887 100%);
+    color: white;
+}
+
+    </style>
+    </head>
+    <body>
+       
+<script
+src="http://maps.googleapis.com/maps/api/js">
+</script>
+
+<script>
+var myCenter=new google.maps.LatLng(12.837269, 80.137222);
+var x=new google.maps.LatLng(12.840499, 80.136882);
+var x1=new google.maps.LatLng(12.839730, 80.136488);
+var x2=new google.maps.LatLng(12.836147, 80.134847);
+var x4=new google.maps.LatLng(12.835390, 80.135335);
+var x3=new google.maps.LatLng(12.835409, 80.137103);
+var marker;
+
+function initialize()
+{
+var mapProp = {
+  center:myCenter,
+  zoom:17,
+  mapTypeId:google.maps.MapTypeId.SATELLITE
+  };
+
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker=new google.maps.Marker({
+  position:x3,
+  animation:google.maps.Animation.BOUNCE
+  });
+
+marker.setMap(map);
+
+var myTrip=[x,x1,x2,x4,x3];
+var flightPath=new google.maps.Polyline({
+  path:myTrip,
+  strokeColor:"#FF0000",
+  strokeOpacity:0.8,
+  strokeWeight:4
+  });
+
+flightPath.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+
+<body>
+        <div class="row"> 
+            <div class="col-md-2">
+                <h5>Dose Details</h5><br>
+                <p>18-11-2021 <br> total doses: 3 <br> Doses taken: 2</p>
+                <p>18-11-2021 <br> total doses: 3 <br> Doses taken: 3</p>
+                <p>19-11-2021 <br> total doses: 3 <br> Doses taken: 3</p>
+                <p>20-11-2021 <br> total doses: 3 <br> Doses taken: 0</p>
+                <p>21-11-2021 <br> total doses: 3 <br> Doses taken: 1</p>
+            </div>
+            <div class="col-md-10">
+                <div id="googleMap" style="width:1100px;height:600px;"></div>
+            </div>
+        </div>   
+
+    </body>
+</html>

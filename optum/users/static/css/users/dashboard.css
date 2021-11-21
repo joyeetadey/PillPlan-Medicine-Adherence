@@ -256,4 +256,8 @@ ul {
     color: white;
     margin-left: 10px;
     text-decoration: none;
-}  
+}
+.iframe{
+    width: 1100px; 
+    height: 400px;
+}

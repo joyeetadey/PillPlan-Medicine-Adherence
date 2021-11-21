@@ -1,263 +1,173 @@
 {% load static %}
-<!-- <!doctype html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="{% static 'css/users/landing.css' %}">
+    <head>
+        <meta charset="utf-8" />
+        <title>Landing Page</title>
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+        <meta name="viewport" content="width=device-width" />
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <button><a href="{% url 'register' %}">Register</a></button>
-    <button><a href="{% url 'login' %}">Login</a></button>
-  </body>
-</html> -->
+        <link href="{% static 'css/users/bootstrap.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/users/landing-page.css' %}" rel="stylesheet"/>
 
+        <!--     Fonts and icons     -->
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+      <style>
+        body {
+        background-color: #04242F;
+        }
+       
+      </style>
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>PillPlan</title>
-	<link rel="stylesheet" href="{% static 'css/users/all.min.css' %}"> <!-- https://fontawesome.com/ -->
-	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
-    <link href="{% static 'css/users/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/users/templatemo-xtra-blog.css' %}" rel="stylesheet">
-<!--
-    
-TemplateMo 553 Xtra Blog
-
-https://templatemo.com/tm-553-xtra-blog
-
--->
-</head>
-<body>
-	<header class="tm-header" id="tm-header">
-        <div class="tm-header-wrapper">
-            <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="tm-site-header">
-                <div><img src="{% static 'images/logo.png' %}"></i></div>            
-                <!-- <h1 class="text-center">PillPlan</h1> -->
-            </div>
-            <nav class="tm-nav" id="tm-nav">            
-                <ul>
-                    <li class="tm-nav-item active"><a href="{% url 'landing' %}" class="tm-nav-link">
-                        <i class="fas fa-home"></i>
-                        Home
-                    </a></li>
-                    <li class="tm-nav-item"><a href="{% url 'login' %}" class="tm-nav-link">
-                        <i class="fas fa-pen"></i>
-                        Login
-                    </a></li>
-                    
-                    <li class="tm-nav-item"><a href="{% url 'register' %}" class="tm-nav-link">
-                        <i class="fas fa-users"></i>
-                        Register
-                    </a></li>
-                    <li class="tm-nav-item"><a href="{% url 'about' %}" class="tm-nav-link">
-                        <i class="far fa-comments"></i>
-                        About
-                    </a></li>
-                    <li class="tm-nav-item"><a href="{% url 'contact' %}" class="tm-nav-link">
-                      <i class="far fa-comments"></i>
-                      Contact
-                  </a></li>
-                </ul>
-            </nav>
-            
-            <p class="tm-mb-80 pr-5 text-white">
-                PillPlan is a multi-purpose HTML template from TemplateMo website. Left side is a sticky menu bar. Right side content will scroll up and down.
-            </p>
-        </div>
-    </header>
-    <div class="container-fluid">
-        <main class="tm-main">
-            <!-- Search form -->
-            <div class="row tm-row">
-                <div class="col-12">
-                    <form method="GET" class="form-inline tm-mb-80 tm-search-form">                
-                        <input class="form-control tm-search-input" name="query" type="text" placeholder="Search..." aria-label="Search">
-                        <button class="tm-search-button" type="submit">
-                            <i class="fas fa-search tm-search-icon" aria-hidden="true"></i>
-                        </button>                                
-                    </form>
-                </div>                
-            </div>            
-            <div class="row tm-row">
-                <article class="col-12 col-md-6 tm-post">
-                    <hr class="tm-hr-primary">
-                    <a href="post.html" class="effect-lily tm-post-link tm-pt-60">
-                        <div class="tm-post-link-inner">
-                            <img src="{% static 'images/landing/1.png' %}" alt="Image" class="img-fluid">                            
-                        </div>
-                        <span class="position-absolute tm-new-badge">New</span>
-                        <h2 class="tm-pt-30 tm-color-primary tm-post-title">Simple and useful HTML layout</h2>
-                    </a>                    
-                    <p class="tm-pt-30">
-                        There is a clickable image with beautiful hover effect and active title link for each post item. 
-                        Left side is a sticky menu bar. Right side is a blog content that will scroll up and down.
-                    </p>
-                    <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary">Travel . Events</span>
-                        <span class="tm-color-primary">June 24, 2020</span>
-                    </div>
-                    <hr>
-                    <div class="d-flex justify-content-between">
-                        <span>36 comments</span>
-                        <span>by Admin Nat</span>
-                    </div>
-                </article>
-                <article class="col-12 col-md-6 tm-post">
-                    <hr class="tm-hr-primary">
-                    <a href="post.html" class="effect-lily tm-post-link tm-pt-60">
-                        <div class=" tm-post-link-inner">
-                            <img src="{% static 'images/landing/2.png' %}" alt="Image" class="img-fluid">                            
-                        </div>
-                        <span class="position-absolute tm-new-badge">New</span>
-                        <h2 class="tm-pt-30 tm-color-primary tm-post-title">Multi-purpose blog template</h2>
-                    </a>                    
-                    <p class="tm-pt-30">
-                        <a rel="nofollow" href="https://templatemo.com/tm-553-xtra-blog" target="_blank">Xtra Blog</a>  is a multi-purpose HTML CSS template from TemplateMo website. 
-                        Blog list, single post, about, contact pages are included. Left sidebar fixed width and content area is a fluid full-width.
-                    </p>
-                    <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary">Creative . Design . Business</span>
-                        <span class="tm-color-primary">June 16, 2020</span>
-                    </div>
-                    <hr>
-                    <div class="d-flex justify-content-between">
-                        <span>48 comments</span>
-                        <span>by Admin Sam</span>
-                    </div>
-                </article>
-                <article class="col-12 col-md-6 tm-post">
-                    <hr class="tm-hr-primary">
-                    <a href="post.html" class="effect-lily tm-post-link tm-pt-20">
-                        <div class="tm-post-link-inner">
-                            <img src="{% static 'images/landing/3.png' %}" alt="Image" class="img-fluid">
-                        </div>
-                        <h2 class="tm-pt-30 tm-color-primary tm-post-title">How can you apply Xtra Blog</h2>
-                    </a>                    
-                    <p class="tm-pt-30">
-                        You are <u>allowed</u> to convert this template as any kind of CMS theme or template for your custom website builder. 
-                        You can also use this for your clients. Thank you for choosing us.
-                    </p>
-                    <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary">Music . Audio</span>
-                        <span class="tm-color-primary">June 11, 2020</span>
-                    </div>
-                    <hr>
-                    <div class="d-flex justify-content-between">
-                        <span>24 comments</span>
-                        <span>by John Walker</span>
-                    </div>
-                </article>
-                <article class="col-12 col-md-6 tm-post">
-                    <hr class="tm-hr-primary">
-                    <a href="post.html" class="effect-lily tm-post-link tm-pt-20">
-                        <div class="tm-post-link-inner">
-                            <img src="{% static 'images/landing/4.png' %}" alt="Image" class="img-fluid">
-                        </div>
-                        <h2 class="tm-pt-30 tm-color-primary tm-post-title">A little restriction to apply</h2>
-                    </a>                    
-                    <p class="tm-pt-30">
-                        You are <u>not allowed</u> to re-distribute this template as a downloadable ZIP file on any template collection
-                        website. This is strongly prohibited as we worked hard for this template. Please contact TemplateMo for more information.
-                    </p>
-                    <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary">Artworks . Design</span>
-                        <span class="tm-color-primary">June 4, 2020</span>
-                    </div>
-                    <hr>
-                    <div class="d-flex justify-content-between">
-                        <span>72 comments</span>
-                        <span>by Admin Sam</span>
-                    </div>
-                </article>
-                <article class="col-12 col-md-6 tm-post">
-                    <hr class="tm-hr-primary">
-                    <a href="post.html" class="effect-lily tm-post-link tm-pt-20">
-                        <div class="tm-post-link-inner">
-                            <img src="{% static 'images/landing/5.png' %}" alt="Image" class="img-fluid">
-                        </div>
-                        <h2 class="tm-pt-30 tm-color-primary tm-post-title">Color hexa values of Xtra Blog</h2>
-                    </a>                    
-                    <p class="tm-pt-30">
-                        If you wish to kindly support us, please contact us or contribute a small PayPal amount to info [at] templatemo.com that is helpful for us.
-                        <br>
-                        Title #099 New #0CC <br>
-                        <span class="tm-color-primary">Text #999 Line #CCC Next #0CC Prev #F0F0F0</span>
-                    </p>
-                    <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary">Creative . Video . Audio</span>
-                        <span class="tm-color-primary">May 31, 2020</span>
-                    </div>
-                    <hr>
-                    <div class="d-flex justify-content-between">
-                        <span>84 comments</span>
-                        <span>by Admin Sam</span>
-                    </div>
-                </article>
-                <article class="col-12 col-md-6 tm-post">
-                    <hr class="tm-hr-primary">
-                    <a href="post.html" class="effect-lily tm-post-link tm-pt-20">
-                        <div class="tm-post-link-inner">
-                            <img src="{% static 'images/landing/6.png' %}" alt="Image" class="img-fluid">
-                        </div>
-                        <h2 class="tm-pt-30 tm-color-primary tm-post-title">Donec convallis varius risus</h2>
-                    </a>                    
-                    <p class="tm-pt-30">
-                        Quisque id ipsum vel sem maximus vulputate sed quis velit. Nunc vel turpis eget orci elementum cursus vitae in eros. Quisque vulputate nulla ut dolor consectetur luctus.
-                    </p>
-                    <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary">Visual . Artworks</span>
-                        <span class="tm-color-primary">June 16, 2020</span>
-                    </div>
-                    <hr>
-                    <div class="d-flex justify-content-between">
-                        <span>96 comments</span>
-                        <span>by Admin Sam</span>
-                    </div>
-                </article>
-            </div>
-            <div class="row tm-row tm-mt-100 tm-mb-75">
-                <div class="tm-prev-next-wrapper">
-                    <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next disabled tm-mr-20">Prev</a>
-                    <a href="#" class="mb-2 tm-btn tm-btn-primary tm-prev-next">Next</a>
+    </head>
+    <body class="landing-page landing-page1">
+        <nav class="navbar navbar-top" role="navigation" style="background-color: rgba(0, 0, 0, 0.397); height: 100px;">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar bar1"></span>
+                    <span class="icon-bar bar2"></span>
+                    <span class="icon-bar bar3"></span>
+                    </button>
+                    <a href="#">
+                      <img src="{% static 'images/logo.png' %}">
+                    </a>
                 </div>
-                <div class="tm-paging-wrapper">
-                    <span class="d-inline-block mr-3">Page</span>
-                    <nav class="tm-paging-nav d-inline-block">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="example" style="color:aliceblue; font-weight:bold; font-size:24px;">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" style="color:white">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'register' %}" style="color:white">
+                                Register
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'login' %}" style="color:white">
+                                Login
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+        </nav>
+        <div class="wrapper">
+            <div class="parallax filter-gradient green" data-color="black">
+              <img class="parallax-background-image" src="{% static 'images/landing/img1.webp' %}">
+                <div class= "container">
+                    <div class="row">
+                        <div class="col-md-7 hidden-xs">
+                            <div class="description">
+                                <h1><b>Pill Plan</b></h1>
+                                <br>
+                                <h2>It’s Time to
+                                    Re-imagine
+                                    Health Care</h2><br>
+                                    <h5>Your Health…Your Control…Your Guide…For Life</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-md-offset-1">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center" style="color: white">
+              <h4 class="header-text" style="color: white"><b>Why PillPlan?</b></h4>
+              <p>
+                  Imagine a world where there is no confusion on what medications to take and when, where providers can be given a complete picture of your health and well- being, where employees are connected and healthy. Sounds nice? We thought so too. That is why we created KnowYourMeds, a re-imagined digital health assistant which intelligently engages both the patients and providers for healthier outcomes in a highly personalized manner. Our platform acts as your buddy helping to monitor your health and guiding you in your journey towards a healthier, more engaged life.<br>
+              </p>
+          </div>
+            <div class="section section-features" style="background: linear-gradient(to bottom,#04242F, #00455D 50%, #2aa887 100%);">
+                <div class="container" >
+                    <h4 class="header-text text-center" style="color: white">Features</h4>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card card-blue" style="background-color: white;">
+                                <div class="icon">
+                                    <i class="pe-7s-note2"></i>
+                                </div>
+                                <div class="text">
+                                    <h4>Personalized Solutions for Medicine Non-Adherence</h4>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-blue"  style="background-color: white;">
+                                <div class="icon">
+                                    <i class="pe-7s-bell"></i>
+                                </div>
+                                <h4>Smart Notifications on hands</h4>
+                                <p>Automatic text and google calendar reminders to make sure you always take your medicines on time. Sync your care partners to let them know about your progress.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card card-blue"  style="background-color: white;">
+                                <div class="icon">
+                                    <i class="pe-7s-graph1"></i>
+                                </div>
+                                <h4>Gamification and Other Smart Features</h4>
+                                <p>Play info games to discover a new way of fun and learn. Know more about your medications and unlock points. Other smart features include drug-drug interacti0on checker, food-drug interaction checker and many more.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer" style="background-color: #04242F;">
+                <div class="container">
+                    <nav class="pull-left">
                         <ul>
-                            <li class="tm-paging-item active">
-                                <a href="#" class="mb-2 tm-btn tm-paging-link">1</a>
+                            <li>
+                                <a href="#">
+                                Home
+                                </a>
                             </li>
-                            <li class="tm-paging-item">
-                                <a href="#" class="mb-2 tm-btn tm-paging-link">2</a>
+                            <li>
+                                <a href="#">
+                                Company
+                                </a>
                             </li>
-                            <li class="tm-paging-item">
-                                <a href="#" class="mb-2 tm-btn tm-paging-link">3</a>
+                            <li>
+                                <a href="#">
+                                Portfolio
+                                </a>
                             </li>
-                            <li class="tm-paging-item">
-                                <a href="#" class="mb-2 tm-btn tm-paging-link">4</a>
+                            <li>
+                                <a href="#">
+                                Blog
+                                </a>
                             </li>
                         </ul>
                     </nav>
-                </div>                
-            </div>            
-            <footer class="row tm-row">
-                <hr class="col-12">
-                
-                <div class="col-md-6 col-12 tm-color-gray tm-copyright">
-                    Copyright 2021 Team BitMagic
+                    <div class="social-area pull-right">
+                        <a class="btn btn-social btn-facebook btn-simple">
+                        <i class="fa fa-facebook-square"></i>
+                        </a>
+                        <a class="btn btn-social btn-twitter btn-simple">
+                        <i class="fa fa-twitter"></i>
+                        </a>
+                        <a class="btn btn-social btn-pinterest btn-simple">
+                        <i class="fa fa-pinterest"></i>
+                        </a>
+                    </div>
+                    <div class="copyright">
+                        &copy; 2021 <a href="http://www.creative-tim.com">PillPlan</a>
+                    </div>
                 </div>
             </footer>
-        </main>
-    </div>
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/templatemo-script.js' %}"></script>
-</body>
+        </div>
+
+    </body>
+    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.js" type="text/javascript"></script>
+    <script src="assets/js/awesome-landing-page.js" type="text/javascript"></script>
 </html>

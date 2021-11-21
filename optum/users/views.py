@@ -14,7 +14,7 @@ from django.contrib.auth.decorators import login_required
 # from .forms import PillForm
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
-from datetime import datetime
+from datetime import time
 
 import joblib
 
@@ -235,14 +235,9 @@ def bmiresult(request):
 
 
 
-# @login_required(login_url = 'login')
-# def medicineList(request):
-#     return render(request,'users/medicinelist.html')
-
-# def dashboard(request):
-#     log_user = request.user
-#     med_list = Medicine.objects.filter(user=log_user)
-#     return render(request,'users/dashboard.html',{'med_list':med_list})
+@login_required(login_url = 'login')
+def medicineList(request):
+    return render(request,'users/medicinelist.html')
 
 class TaskList(LoginRequiredMixin,ListView):
     model = Medicine
@@ -258,6 +253,19 @@ class TaskList(LoginRequiredMixin,ListView):
         
         return context
 
+# @login_required(login_url = 'login')
+# def medicines(request):
+#     dd1 = time(12,0)
+#     log_user = request.user
+#     med_list = Medicine.objects.filter(user=log_user)
+#     drug_time = Medicine.objects.values('drug_time').filter(user=log_user)
+
+#     # if(drug_time < dd1):
+#     #     time1 = "Morning"
+#     # else:
+#     #     time1 = "eveing"
+#     return render(request,'users/Medicines/medicinelist.html',{'med_list':med_list.order_by('drug_time'), 'time':drug_time})
+
 class TaskDetail(LoginRequiredMixin,DetailView):
     model = Medicine
     context_object_name = 'medicine'
@@ -266,7 +274,8 @@ class TaskDetail(LoginRequiredMixin,DetailView):
 
 class TaskCreate(LoginRequiredMixin,CreateView):
     model = Medicine
-    fields = ['title','description','complete']
+    fields =  ['title','description','drug_type','drug_qty','drug_frequency','drug_time']
+    
     template_name = "users/Medicines/medicineform.html"
     success_url = reverse_lazy('medicines')
 
@@ -336,4 +345,43 @@ def usertype_in(request):
 def data(request):
     return render(request,'users/data.html')
 
+@login_required(login_url = 'login')
+def drugdrug(request):
+    return render(request,'users/drugdrug.html')
 
+
+import pandas as pd
+
+@login_required(login_url = 'login')
+def drugdrugresult(request):
+    df = pd.read_csv('C:/Users/Joyeeta/Desktop/optum/newclone/PillPlan-Medicine-Adherence/optum/users/drug-drug.csv')
+    df.rename(columns = {'object  ':'object'}, inplace = True)
+    flag=0
+    if request.method == 'POST':
+        drug1 = (request.POST['drug1'])
+        drug2 = (request.POST['drug2'])
+
+    for index, row in df.iterrows():
+        if(row['object']==drug1 and row['precipitant']==drug2):
+            flag=1
+            break
+        else:
+            flag=0
+    msg = []
+    if(flag==1):
+        msg.append(row['Effect'])
+        msg.append(row['Related Drugs'])
+        msg.append(row['Options'])
+    else:
+        msg.append("No Interaction")
+        msg.append("None")
+        msg.append("None")
+    return render(request,'users/drugdrugresult.html',{'effect':msg[0],'related':msg[1],'options':msg[2]})
+
+@login_required(login_url = 'login')
+def carepartner(request):
+    return render(request,'users/carepartner.html')
+
+@login_required(login_url = 'login')
+def foodallergy(request):
+    return render(request,'users/food-allergy.html')

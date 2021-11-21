@@ -143,9 +143,7 @@
       </div>
 <body>
 
-<!-------------------------------------------------------------------------------------------------->
 
-<!-- <a href="{% url 'medicine-create' %}">Add Medicine</a> -->
 <div class="bg-container">
   <div class="row">
     <div class="col-md-10">
@@ -165,6 +163,16 @@
       <h2 style="color: orangered">Morning</h2>
       <h5>5:00am to 12:00pm</h5><br>
       <img id="timing-img" src="{% static 'images/morning.png' %}">
+      {% for meds in med_list %}
+      {{ meds }} 
+      {%  endfor %}
+      
+      {{ time }}
+      
+      
+      
+      
+      
       <table class="table table-sm">
         {% for medicine in medicines %}
         <tr>

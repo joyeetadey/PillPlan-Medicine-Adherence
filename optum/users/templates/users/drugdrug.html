@@ -1,0 +1,46 @@
+{% load static %}
+<html>
+  <head>
+      <title>
+            Drug Interaction Checker
+      </title>
+      <meta charset="UTF-8">
+  
+  <link rel="stylesheet" href="{% static 'css/users/bmi.css' %}">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
+     /* body{
+       background: linear-gradient(to bottom,#04242F, #00455D 50%, #2aa887 100%);;
+     } */
+  </style>
+</head>
+
+<body>
+
+<form action="{% url 'drugdrugresult' %}" method="post">
+{% csrf_token %}
+
+
+
+      <div class="login-div">
+          <div><img src="{% static 'images/medicine.svg' %}" height="110px" width="110px"></div>
+          <div class="title">Pill Plan </div>
+          <div class="sub-title">Check Drug Interaction</div>
+          <div class="fields">
+            <div class="drug1">
+                <input type="text" name="drug1" class="user-input" placeholder="Drug 1" />
+            </div>
+            <div class="Drug2">
+                <input type="text" name="drug2" class="pass-input" placeholder="Drug 2" />
+            </div>
+          </div>
+          <button class="signin-button">Check</button>
+          
+      </div>
+
+  </form>
+</body>
+  </html>
+
+ 
