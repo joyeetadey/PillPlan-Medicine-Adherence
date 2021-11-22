@@ -33,7 +33,7 @@
 </div>
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+# About The Project
 
 ![Pillplan Dashboard](dashboard.png)
 
@@ -54,7 +54,7 @@ Here's why:
 * Reward system based engaging portal that keeps the patients motivated to complete their medication journey on time.
 
 
-### Built With
+# Built With
 
 Major Frameworks, Libraries and Algorithms used
 
@@ -92,7 +92,7 @@ Hardware Component
 
 
 <!-- GETTING STARTED -->
-## Installation
+# Installation
 
 * Clone the repository using the following command
 ```sh
@@ -113,7 +113,7 @@ python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
-### Prerequisites
+# Prerequisites
 * To start the calendar API and google maps API you need your API ke and Client ID
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -144,11 +144,11 @@ $ ./tree-md .
 
 
 <!-- CONTACT -->
-## Contributors
+# Contributors
 
-* Joyeeta Dey 
-* Dhyani Desai
-* Karmanya Tyagi 
+* <h4 align="left"><a href="https://github.com/joyeetadey">Joyeeta Dey</a></h4>
+* <h4 align="left"><a href="https://github.com/dhyanid13">Dhyani Desai</a></h4>
+* <h4 align="left"><a href="https://github.com/KarmanyaT28">Karmanya Tyagi</a></h4>
 
 Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
 
@@ -156,6 +156,6 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 
 
-## Demo Video Link
+# Demo Video Link
 
 https://drive.google.com/file/d/1PD-_MsMhHz6NZK4fb_Fei8ZnfEHNE_Ai/view?usp=sharing
