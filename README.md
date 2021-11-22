@@ -119,7 +119,7 @@ python manage.py runserver
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-$ ./tree-md .
+
 # Project tree
 
 .
