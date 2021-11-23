@@ -80,7 +80,7 @@ Other Algorithms
 
 Other tools
 * Tensorflow,Open CV
-* GTTS module, celery, Google Geolocation
+* GTTS module, Google Geolocation
 * Python ML,DL libraries
 * Beautiful Soup , Web Scraping 
 
